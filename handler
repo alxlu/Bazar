@@ -1,0 +1,11 @@
+<key>CFBundleURLTypes</key>
+<array>
+  <dict>
+    <key>CFBundleURLName</key>
+    <string>Bazar</string>
+    <key>CFBundleURLSchemes</key>
+    <array>
+      <string>bazar</string>
+    </array>
+  </dict>
+</array>

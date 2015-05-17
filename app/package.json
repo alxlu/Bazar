@@ -1,0 +1,13 @@
+{
+  "name": "Bazar",
+  "version": "1.0.0",
+  "main": "./nwapp/index.html",
+  "description": "",
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^3.8.11",
+    "gulp-util": "^3.0.4",
+    "node-webkit-builder": "^1.0.11"
+  }
+}
