@@ -1,0 +1,14 @@
+{
+  "manifest_version": 2,
+
+  "name": "Bazar",
+  "description": "Installs hosted apps",
+  "version": "1.0",
+  "permissions": ["*://*/*"],
+
+  "content_scripts": [{
+    "matches": ["<all_urls>"],
+    "js": ["scripts/bazar.js"],
+    "css": ["styles/style.css"]
+  }]
+}
