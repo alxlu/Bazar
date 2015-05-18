@@ -1,3 +1,10 @@
+var Firebase = require('firebase');
+
+var ref = new Firebase('https://bazar-data.firebaseio.com/');
+var x = 0;
+
+console.log(ref);
+console.log('gulp working');
 console.log('bazar loaded');
 console.log(window.location);
 var encodeTest = encodeURIComponent('?origin=' + window.location.origin + '&href=' + window.location.href + '&manifest=manifest.json');
