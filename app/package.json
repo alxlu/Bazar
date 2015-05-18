@@ -9,5 +9,8 @@
     "gulp": "^3.8.11",
     "gulp-util": "^3.0.4",
     "node-webkit-builder": "^1.0.11"
+  },
+  "dependencies": {
+    "manifoldjs": "^0.1.3"
   }
 }
