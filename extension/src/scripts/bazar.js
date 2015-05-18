@@ -44,8 +44,6 @@ ref.once('value', function(snapshot) {
 });
 
 
-console.log(output);
-
 console.log(ref);
 console.log('gulp working');
 console.log('bazar loaded');
