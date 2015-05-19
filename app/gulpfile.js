@@ -45,8 +45,17 @@ var config = {
   js: {
     src: './src/js/**/*.js',
     dest: './nwapp/js'
+  },
+  media: {
+    src: './src/media/*',
+    dest: './nwapp/media'
   }
 };
+
+gulp.task('media', function() {
+  return gulp.src(config.media.src)
+    .pipe(gulp.dest(config.media.dest));
+});
 
 gulp.task('js', ['lint'], function() {
   return gulp.src(config.js.src)
@@ -79,8 +88,8 @@ gulp.task('watch', function(callback) {
   watch(config.markup.watch, function() { gulp.start('markup'); });
 });
 
-gulp.task('dev', ['js', 'sass', 'markup', 'watch']);
-gulp.task('build', ['js', 'sass', 'markup']);
+gulp.task('dev', ['js', 'sass', 'markup', 'media', 'watch']);
+gulp.task('build', ['js', 'sass', 'markup', 'media']);
 
 gulp.task('default', ['build'], function() {
   gulp.start('nw');

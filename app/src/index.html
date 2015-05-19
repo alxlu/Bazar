@@ -7,6 +7,8 @@
 {% endblock %}
 
 {% block content %}
-    <h1>Bazar</h1>
-    We are using node.js <script>document.write(process.version)</script>.
+  <div id="splash">
+    {% include "templates/splashscreen.html" %}
+  </div>
+  We are using node.js <script>document.write(process.version)</script>.
 {% endblock %}

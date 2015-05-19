@@ -31,10 +31,16 @@ manifestTools.getManifestFromSite(siteUrl, function(err, response, body) {
     manifest.content.start_url = processUrl(manifest.content.start_url);
   }
   var result = projectBuilder.createWindows10App(manifest, HOSTED_APP_DIR);
+  //removeSplash();
   result.then(function() {
     var outputDir = process.cwd() + '/' + HOSTED_APP_DIR + '/windows10/manifest';
+    removeSplash();
     console.log('complete!');
   });
-  console.log('async test');
-
 });
+
+function removeSplash() {
+  console.log('test removeSplash');
+  var splash = document.getElementById('splash');
+  splash.className="animated fadeOut";
+}
