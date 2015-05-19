@@ -23,7 +23,7 @@ var manifest = document.querySelector('link[rel~="manifest"]');
 
 function firebaseFallBack(override) {
   if (manifest || override) {
-    link.appurl = 'bazar://open/' + window.location;
+    link.appurl = 'bazar://' + window.location;
     var output = Mustache.to_html(banner, link, partials);
     createBanner(output);
   }

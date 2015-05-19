@@ -11,7 +11,7 @@ var stylish = require('jshint-stylish');
 
 gulp.task('nw', function () {
     var nw = new NwBuilder({
-        version: '0.11.4',
+        version: '0.12.1',
         files: ['./package.json', './nwapp/**/**'],
         macIcns: './icons/icon.icns',
         macPlist: {mac_bundle_id: 'myPkg'},

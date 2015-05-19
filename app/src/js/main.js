@@ -8,7 +8,17 @@ var projectTools = manifoldjs.projectTools;
 var HOSTED_APP_DIR = 'hostedapp';
 var originalPath = process.cwd();
 
-console.log(gui.App.argv);
+
+var param = gui.App.argv[0];
+
+
+if (param) {
+  param = param.replace('bazar://', '');
+  console.log(param);
+} else {
+  param = 'http://seksenov.github.io/ContosoTravel/';
+}
+
 
 gui.App.on('open', function(file) {
   console.log(file);
@@ -21,7 +31,7 @@ function processUrl(url) {
   return url;
 }
 
-var siteUrl = processUrl('http://seksenov.github.io/ContosoTravel/');
+var siteUrl = processUrl(param);
 manifestTools.getManifestFromSite(siteUrl, function(err, response) {
   console.log(err);
   console.log(response);
@@ -58,8 +68,9 @@ function generateView(app) {
 }
 
 function removeSplash() {
+  var splash = document.getElementById('splash');
+  splash.className='clickthrough';
   setTimeout(function() {
-    var splash = document.getElementById('splash');
-    splash.className='animated fadeOut';
+    splash.className+=' animated fadeOut';
   }, 1500);
 }
