@@ -2,6 +2,11 @@
   "name": "Bazar",
   "version": "1.0.0",
   "main": "./nwapp/index.html",
+  "window": {
+    "toolbar": true,
+    "width": 800,
+    "height": 550
+  },
   "description": "",
   "author": "",
   "license": "ISC",
