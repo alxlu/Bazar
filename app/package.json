@@ -17,7 +17,6 @@
     "node-webkit-builder": "^1.0.11"
   },
   "dependencies": {
-    "manifoldjs": "^0.1.3",
-    "moment": "^2.10.3"
+    "manifoldjs": "^0.1.3"
   }
 }
