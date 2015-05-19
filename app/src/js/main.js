@@ -41,6 +41,8 @@ manifestTools.getManifestFromSite(siteUrl, function(err, response, body) {
 
 function removeSplash() {
   console.log('test removeSplash');
-  var splash = document.getElementById('splash');
-  splash.className="animated fadeOut";
+  setTimeout(function() {
+    var splash = document.getElementById('splash');
+    splash.className="animated fadeOut";
+  }, 1500);
 }

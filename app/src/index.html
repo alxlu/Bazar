@@ -7,8 +7,11 @@
 {% endblock %}
 
 {% block content %}
+  <div id="toolbar"></div>
   <div id="splash">
     {% include "templates/splashscreen.html" %}
   </div>
-  We are using node.js <script>document.write(process.version)</script>.
+  <div id="content">
+    We are using node.js <script>document.write(process.version)</script>.
+  </div>
 {% endblock %}
