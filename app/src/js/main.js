@@ -1,3 +1,4 @@
+'use strict';
 var gui = require('nw.gui');
 var manifoldjs = require('manifoldjs');
 var manifestTools = manifoldjs.manifestTools;
@@ -14,7 +15,7 @@ gui.App.on('open', function(file) {
 });
 
 function processUrl(url) {
-  if (url.substr(-1) != '/') {
+  if (url.substr(-1) !== '/') {
     url += '/';
   }
   return url;
@@ -23,7 +24,7 @@ function processUrl(url) {
 console.log(process.cwd());
 
 var siteUrl = processUrl('http://seksenov.github.io/ContosoTravel/');
-manifestTools.getManifestFromSite(siteUrl, function(err, response, body) {
+manifestTools.getManifestFromSite(siteUrl, function(err, response) {
   console.log(err);
   console.log(response);
   var manifest = response;
@@ -43,6 +44,6 @@ function removeSplash() {
   console.log('test removeSplash');
   setTimeout(function() {
     var splash = document.getElementById('splash');
-    splash.className="animated fadeOut";
+    splash.className='animated fadeOut';
   }, 1500);
 }
