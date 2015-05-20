@@ -5,20 +5,28 @@ var manifestTools = manifoldjs.manifestTools;
 var projectBuilder = manifoldjs.projectBuilder;
 var projectTools = manifoldjs.projectTools;
 
+var win = gui.Window.get();
+
 var HOSTED_APP_DIR = 'hostedapp';
 var originalPath = process.cwd();
 
-
 var param = gui.App.argv[0];
 
+var silent = false;
 
 if (param) {
   param = param.replace('bazar://', '');
   console.log(param);
+  var action = param.split('/', 2);
+  if (action[0] === 'install' && action[1] && action[1] !== '') {
+    win.hide();
+    param = param.replace('install/', '');
+    silent = true;
+  }
 } else {
   param = 'http://seksenov.github.io/ContosoTravel/';
+  console.log(param);
 }
-
 
 gui.App.on('open', function(file) {
   console.log(file);
@@ -41,9 +49,13 @@ manifestTools.getManifestFromSite(siteUrl, function(err, response) {
   }
   var result = projectBuilder.createWindows10App(manifest, HOSTED_APP_DIR);
   result.then(function() {
-    generateView(manifest.content);
-    removeSplash();
-    console.log('complete!');
+    if (silent) {
+      install();
+    } else {
+      generateView(manifest.content);
+      removeSplash();
+      console.log('complete!');
+    }
   });
 });
 
@@ -53,7 +65,11 @@ function generateView(app) {
   var installBtn = document.getElementById('install-btn');
   appTitle.innerText = app.name;
   appIcon.src = app.icons[0].src;
-  installBtn.addEventListener('click', function() {
+  installBtn.addEventListener('click', install, false);
+}
+
+
+function install() {
     var outputDir = process.cwd() + '/' + HOSTED_APP_DIR + '/windows10/manifest';
     process.chdir(outputDir);
     console.log(process.cwd());
@@ -63,8 +79,10 @@ function generateView(app) {
       }
       process.chdir(originalPath);
       console.log(process.cwd());
+      if (silent) {
+        win.close();
+      }
     });
-  }, false);
 }
 
 function removeSplash() {
