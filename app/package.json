@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "main": "./nwapp/index.html",
   "window": {
-    "toolbar": true,
+    "toolbar": false,
     "width": 925,
-    "height": 650
+    "height": 575
   },
   "description": "",
   "author": "",

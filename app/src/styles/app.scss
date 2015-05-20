@@ -2,6 +2,11 @@
 @import 'splash';
 @import 'buttons';
 
+html, body {
+  height: 100%;
+  overflow: hidden;
+}
+
 .hide {
   visibility: hidden;
 }
@@ -17,7 +22,7 @@ button:focus {
   outline: none;
 }
 
-h1 h2 h3 {
+h1, h2, h3 {
   font-family: 'Didot', 'Bodoni MT', serif;
 }
 
