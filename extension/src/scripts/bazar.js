@@ -1,13 +1,14 @@
+'use strict';
 var Firebase = require('firebase');
 var Mustache = require('mustache-for-chromeapps');
 var url = require('url');
 
 var ref = new Firebase('https://bazar-data.firebaseio.com/mappings');
 
-var banner = '<div id="hosted-app-banner">{{>text}}{{>button}}{{>dismiss}}</div>';
+var banner = '<div id="hosted-app-banner">{{>button}}{{>text}}</div>';
 var partials = {
-  text: '<p>This website can be installed as an app!</p>',
-  button: '<a href={{appurl}}>Install</a>',
+  text: '<p id="bazar-info">This website can be installed as an app!</p>',
+  button: '<a data-text="Install" class="button-hover" id="bazar-button" href={{appurl}}>Install</a>',
   dismiss: '<div>x</div>'
 };
 
@@ -40,13 +41,12 @@ ref.once('value', function(snapshot) {
     firebaseFallBack();
   }
 }, function(err) {
-    firebaseFallBack();
+  console.loc(err);
+  firebaseFallBack();
 });
 
 
 console.log(ref);
-console.log('gulp working');
-console.log('bazar loaded');
 console.log(window.location);
 
 var encodeTest = encodeURIComponent('?origin=' + window.location.origin + '&href=' + window.location.href + '&manifest=manifest.json');

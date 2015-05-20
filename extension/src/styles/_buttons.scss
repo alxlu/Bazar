@@ -1,0 +1,47 @@
+@function ep($target){
+  @return ($target*16)+0px;
+}
+
+#bazar-button, .button,
+[class*="button-"]{
+  font-size: 16px !important;
+  position: relative !important;
+  display: inline-block !important;
+  overflow: hidden !important;
+  float: right !important;
+  //margin: 0 ep(1) ep(1) 0 !important;
+  margin-top: 10px !important;
+  margin-bottom: 10px !important;
+  margin-right: 25px !important;
+  margin-left: 25px !important;
+  padding-top: 38px;
+  padding: 0 ep(1.75) !important;
+  height: ep(2) !important;
+  font: 300 1em/32px 'Open Sans', sans-serif !important;
+  text:{
+    decoration: none !important;
+  }
+  letter-spacing: ep(.08) !important;
+  color: black !important;
+  background: #D9D9D9 !important;
+  border: solid 1px #fff !important;
+  border-radius: 2px !important;
+  transition: .35s !important;
+
+  &:hover{
+    background: #B3B3B3 !important;
+    //box-shadow: 0 0 3px rgba(black, .5) inset !important;
+  }
+}
+
+#bazar-button, .button-hover{
+
+  &:hover{ line-height: ep(7.5) !important; }
+
+  &:before{
+    content: attr(data-text) !important;
+    color: white !important;
+    position: absolute !important;
+    top: ep(-2.75) !important;
+  }
+}

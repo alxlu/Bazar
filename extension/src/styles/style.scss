@@ -1,3 +1,5 @@
+@import 'buttons';
+
 #hosted-app-banner {
   z-index: 90000001;
   width: 100%;
@@ -7,4 +9,16 @@
   position: fixed;
   margin: 0;
   top: 0;
+  font-size: 16px !important;
+  line-height: 16px !important;
 }
+
+#hosted-app-banner > p, #bazar-info {
+  font: normal 12pt "Open Sans", sans-serif !important;
+  color: white;
+  float: right;
+  display: inline-block;
+  margin-top: 16px !important;
+  margin-bottom: 16px !important;
+}
+
