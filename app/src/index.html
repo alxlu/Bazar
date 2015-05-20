@@ -7,14 +7,14 @@
 {% endblock %}
 
 {% block content %}
-  <div id="toolbar"></div>
   <div id="splash">
     {% include "templates/splashscreen.html" %}
   </div>
-  <div id="content">
+  <div class="hide" id="content">
+    <div id="navbar"></div>
     <h2 id="app-name"></h2>
     <img id="app-icon"></img>
-    <button id="install-btn">Install</button>
-    We are using node.js <script>document.write(process.version)</script>.
+    <br>
+    <button data-text="Install" class="button-hover" id="install-btn">Install</button>
   </div>
 {% endblock %}

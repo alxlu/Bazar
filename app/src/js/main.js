@@ -88,6 +88,7 @@ function install() {
 function removeSplash() {
   var splash = document.getElementById('splash');
   splash.className='clickthrough';
+  document.getElementById('content').className = '';
   setTimeout(function() {
     splash.className+=' animated fadeOut';
   }, 1500);

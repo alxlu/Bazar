@@ -1,5 +1,10 @@
 @import 'animate';
 @import 'splash';
+@import 'buttons';
+
+.hide {
+  visibility: hidden;
+}
 
 .clickthrough {
   pointer-events: none;
@@ -12,4 +17,11 @@ h1 h2 h3 {
 #content {
   margin: auto;
   width: 500px;
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+  outline: none;
 }

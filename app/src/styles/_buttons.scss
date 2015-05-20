@@ -1,0 +1,37 @@
+.button,
+[class*="button-"]{
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  float: left;
+  margin: 0 1em 1em 0;
+  padding: 0 2.5em;
+  height: 3.5em;
+  font: 300 1em/3.5em 'Open Sans', sans-serif;
+  text:{
+    decoration: none;
+  }
+  letter-spacing: .08em;
+  color: black;
+  background: #D9D9D9;
+  border: solid 1px #fff;
+  border-radius: 2px;
+  transition: .35s;
+  
+  &:hover{
+    background: #B3B3B3;
+    //box-shadow: 0 0 3px rgba(black, .5) inset;
+  }
+}
+
+.button-hover{
+  
+  &:hover{ line-height: 9em; }
+    
+  &:before{
+    content: attr(data-text);
+    color: white;
+    position: absolute;
+    top: -2.75em;
+  }
+}
