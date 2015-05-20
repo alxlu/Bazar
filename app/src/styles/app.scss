@@ -10,18 +10,38 @@
   pointer-events: none;
 }
 
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+  outline: none;
+}
+
 h1 h2 h3 {
   font-family: 'Didot', 'Bodoni MT', serif;
 }
 
 #content {
   margin: auto;
-  width: 500px;
+  width: 750px;
+  display: flex;
+  flex-flow: row wrap;
 }
 
-input:focus,
-select:focus,
-textarea:focus,
-button:focus {
-  outline: none;
+#content > * {
+  padding: 10px;
+  flex: 1 100%;
+}
+
+#info {
+  flex: 2 0px;
+  order: 1;
+}
+
+#screenshot {
+  flex: 2 350px;
+  order: 2;
+  color: gray;
+  width: 350px;
+  height: 300px;
 }

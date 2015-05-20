@@ -4,8 +4,8 @@
   "main": "./nwapp/index.html",
   "window": {
     "toolbar": true,
-    "width": 800,
-    "height": 550
+    "width": 925,
+    "height": 650
   },
   "description": "",
   "author": "",

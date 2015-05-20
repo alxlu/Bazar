@@ -11,10 +11,15 @@
     {% include "templates/splashscreen.html" %}
   </div>
   <div class="hide" id="content">
-    <div id="navbar"></div>
-    <h2 id="app-name"></h2>
-    <img id="app-icon"></img>
-    <br>
-    <button data-text="Install" class="button-hover" id="install-btn">Install</button>
+    <div id="navbar">
+      <h1 id="app-name"></h1>
+    </div>
+    <div id="info">
+      <img id="app-icon"></img>
+      <br>
+      <br>
+      <button data-text="Install" class="button-hover" id="install-btn">Install</button>
+    </div>
+    <img id="screenshot" src=""></img>
   </div>
 {% endblock %}
